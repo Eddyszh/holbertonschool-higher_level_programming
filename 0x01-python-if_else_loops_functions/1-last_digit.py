@@ -6,10 +6,9 @@ if number < 0:
 else:
     digit = number % 10
 if digit > 5:
-    print("Last digif of {} is {} and is\
- greater than 5".format(number, digit))
+    str = "and is greater than 5"
 if digit == 0:
-    print("Last digif of {} is {} and is 0".format(number, digit))
+    str = "and is 0"
 if digit < 6 and digit != 0:
-    print("Last digif of {} is {} and is\
- less than 6 and not 0".format(number, digit))
+    str = "and is less than 6 and not 0"
+print("Last digit of {:d} is {:d} {}".format(number, digit, str))
