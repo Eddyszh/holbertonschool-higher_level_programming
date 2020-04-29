@@ -2,7 +2,6 @@
 import random
 number = random.randint(-10000, 10000)
 digit = number % 10
-str = ""
 if digit > 5:
     str = "and is greater than 5"
 if digit == 0:
