@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import sys
+    sum = 0
     for i in sys.argv[1:]:
-        if i.isdigit() == False:
-            sys.exit("All the arguments must be integers")
-    num = [int(i) for i in sys.argv[1:]]
-    sum = sum(num)
+        sum += int(i)
     print("{:d}".format(sum))
