@@ -11,8 +11,8 @@ class Square:
         Args:
             size: size of square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -73,16 +73,16 @@ class Square:
         Returns:
             tha area of the square
         """
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         """
         Prints the square with the character #
         """
-        if self.__size == 0:
+        if self.size == 0:
             print()
             return
-        for i in range(self.__position[1]):
+        for i in range(self.position[1]):
             print()
-        for i in range(self.__size):
-                print("{}{}".format(' ' * self.__position[0], '#' * self.__size))
+        for i in range(self.size):
+                print("{}{}".format(' ' * self.position[0], '#' * self.size))
