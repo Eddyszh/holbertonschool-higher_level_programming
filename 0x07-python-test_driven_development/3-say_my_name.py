@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+"""
+    Say_my_name
+    Function:
+        say_my_name: prints My name is <first name> <last name>
+"""
+
+
+def say_my_name(first_name, last_name=""):
+    """
+        Args:
+            first_name: string for name
+            last_name: string for last name
+        Raise:
+            TypeError
+    """
+    if type(first_name) is not str:
+        raise TypeError("first_name must be a string")
+    elif type(last_name) is not str:
+        raise TypeError("last_name must be a string")
+    print("My name is {} {}".format(first_name, last_name))

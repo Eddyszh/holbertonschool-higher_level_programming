@@ -1,0 +1,71 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+    >>> add_integer(6, 8)
+    14
+
+    >>> add_integer(14, -7)
+    7
+
+    >>> add_integer(2)
+    100
+
+    >>> add_integer(23.6, 34.4)
+    57
+
+    >>> add_integer(10, "Hola")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer('2', 21)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(, 98)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+    >>> add_integer(,)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+    >>> add_integer((2, 4), 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(2, (4, 5))
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer(2, [4, 5])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer(2, 3, 6)
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> add_integer(666, float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
