@@ -108,16 +108,16 @@ class Rectangle(Base):
         """
         Prints a rectangle with # character
         """
-        print(("\n" * self.__y) + "\n".join(((" " * self.__x) + 
-            ("#" * self.__width)) for i in range(self.__height)))
+        print(("\n" * self.__y) + "\n".join(((" " * self.__x) +
+              ("#" * self.__width)) for i in range(self.__height)))
 
     def __str__(self):
         """
         Returns:
             [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(self.id,
-        self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """
