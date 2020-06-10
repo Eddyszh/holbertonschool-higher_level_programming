@@ -9,7 +9,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestBase:
+class TestBase(unittest.TestCase):
     """
     Contains test cases
     """
