@@ -10,10 +10,11 @@ if __name__ == "__main__":
     from model_state import Base, State
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
-    session = sessionmaker(bind=engine)
+    Session = sessionmaker()
+    session = Session(bind=engine)
     Base.metadata.create_all(engine)
     s = State(name="Louisiana")
-    session().add(s)
-    session().commit()
+    session.add(s)
+    session.commit()
     print(s.id)
-    session().close()
+    session.close()
