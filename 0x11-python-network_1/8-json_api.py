@@ -8,12 +8,12 @@ if __name__ == "__main__":
     import requests
     from sys import argv
     if len(argv) > 1:
-        q=""
-    else:
         q = argv[1]
+    else:
+        q = ""
     url = 'http://0.0.0.0:5000/search_user'
     try:
-        r = requests.post(url, data={'q':q}).json()
+        r = requests.post(url, data={'q': q}).json()
         if 'id' in r and 'name' in r:
             print("[{}] {}".format(r['id'], r['name']))
         else:
