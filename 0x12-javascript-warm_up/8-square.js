@@ -2,10 +2,10 @@
 const process = require('process');
 const myNum = parseInt(process.argv[2]);
 
-if (!myNum) {
+if (!myNum || !process.argv[2]) {
   console.log('Missing size');
 } else {
   for (let i = 0; i < myNum; i++) {
-    console.log('x'.repeat(myNum));
+    console.log('X'.repeat(myNum));
   }
 }
