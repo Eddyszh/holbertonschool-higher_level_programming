@@ -2,28 +2,19 @@
 const { argv } = require('process');
 const request = require('request');
 
-let count = 0;
-let id = 1;
-let dict = {};
 request(argv[2], function (err, res, body) {
   if (err) {
     return;
   }
-  let json = JSON.parse(body);
-  for (let i = 0; i < json.length; i++) {
-    if (json[i].userId == id) {
-      if (json[i].completed === true) {
-        count++;
+  const dict = {};
+  const json = JSON.parse(body);
+  for (const task of json) {
+    if (task.completed === true) {
+      if (task.userId in dict) {
+        dict[task.userId] += 1;
+      } else {
+        dict[task.userId] = 1;
       }
-    } else {
-      dict[id] = count;
-      count = 0;
-      if (json[i].userId == id + 1) {
-        if (json[i].completed === true) {
-          count++;
-        }
-      }
-      id++;
     }
   }
   console.log(dict);
