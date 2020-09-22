@@ -2,7 +2,6 @@
 const { argv } = require('process');
 const request = require('request');
 
-const id = 'https://swapi-api.hbtn.io/api/people/18/';
 request(argv[2], function (err, res, body) {
   let count = 0;
   if (err) {
@@ -11,7 +10,7 @@ request(argv[2], function (err, res, body) {
   const json = JSON.parse(body);
   for (const film of json.results) {
     for (const character of film.characters) {
-      if (character === id) {
+      if (character.endsWith('18/')) {
         count++;
       }
     }
